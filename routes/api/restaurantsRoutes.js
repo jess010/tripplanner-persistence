@@ -1,12 +1,12 @@
 var Promise = require('bluebird');
 var router = require('express').Router();
-var Activity = require('../../models').Activity;
+var Restaurant = require('../../models').Restaurant;
 
 router.get('/', function (req, res, next) {
-  Activity.findAll()
-  .then(activities => {
-      console.log(activities)
-      res.json(activities)
+  Restaurant.findAll()
+  .then(restaurants => {
+      console.log(restaurants)
+      res.json(restaurants)
   })
   .catch(next)
 })

@@ -4,7 +4,7 @@ var Hotel = require('../models').Hotel;
 var Restaurant = require('../models').Restaurant;
 var Activity = require('../models').Activity;
 
-router.use('/api', require('./api/'));
+// router.use('/api', require('./api/'));
 // router.use('/api', require('api/activitiesRoutes'));
 // router.use('/api', require('api/restaurantsRoutes'));
 
