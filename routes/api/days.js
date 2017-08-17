@@ -3,10 +3,10 @@ const Day = require('../../models').Day;
 
 router.get('/', (req, res, next) => {
   //route goes here
-  console.log('getting all days!')
+  //console.log('getting all days!')
   Day.findAll()
   .then(days => {
-      res.json('getting all days!')
+      res.json(days)
   })
   .catch(next)
 })
@@ -16,11 +16,17 @@ router.get('/:id', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
-  //post goes here
-  console.log('getting post!')
   Day.findAll()
   .then(days => {
-      res.json('getting post!')
+    return new Promise(function (resolve) {return days.length})
+  })
+  .then(length => {
+    return Day.create({
+      name: length + 1
+    })
+  })
+  .then(day => {
+      res.json(day)
   })
   .catch(next)
 })
