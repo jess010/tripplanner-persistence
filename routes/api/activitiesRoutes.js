@@ -5,7 +5,6 @@ var Activity = require('../../models').Activity;
 router.get('/', function (req, res, next) {
   Activity.findAll()
   .then(activities => {
-      console.log(activities)
       res.json(activities)
   })
   .catch(next)

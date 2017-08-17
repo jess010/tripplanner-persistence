@@ -5,7 +5,6 @@ var Hotel = require('../../models').Hotel;
 router.get('/', function (req, res, next) {
     Hotel.findAll()
     .then(hotels => {
-        console.log(hotels)
         res.json(hotels)
     })
     .catch(next)
