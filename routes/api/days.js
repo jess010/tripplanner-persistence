@@ -2,8 +2,6 @@ const router = require('express').Router();
 const Day = require('../../models').Day;
 
 router.get('/', (req, res, next) => {
-  //route goes here
-  //console.log('getting all days!')
   Day.findAll()
   .then(days => {
       res.json(days)
@@ -12,17 +10,18 @@ router.get('/', (req, res, next) => {
 })
 
 router.get('/:id', (req, res, next) => {
-  //post goes here
+
 })
 
 router.post('/', (req, res, next) => {
   Day.findAll()
   .then(days => {
-    return new Promise(function (resolve) {return days.length})
+    console.log(days)
+    return days.length
   })
   .then(length => {
     return Day.create({
-      name: length + 1
+      number: length + 1
     })
   })
   .then(day => {

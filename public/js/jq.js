@@ -45,6 +45,22 @@ $(function () {
         // should log "POST response data: You created a day!!"
     })
 
+    const $addHotel = $('#hotel-choices+button');
+    const $addRestaurant = $('#restaurant-choices+button');
+    const $addActivity = $('#activity-choices+button');
+
+    $addHotel.on('click', function(){
+
+    })
+    // $addRestaurant.on('click', addItinerary)
+    // $addActivity.on('click', addItinerary)
+
+    // function addItinerary(event){
+    //     const $attraction = new Attraction({
+    //         id: hotel.id
+    //     });
+    //     console.log($attraction)
+    // }
 })
 
 
